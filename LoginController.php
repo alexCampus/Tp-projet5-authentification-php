@@ -29,48 +29,19 @@ function loginUser($name, $password_hache)
 		$_SESSION['email'] = $donnees['email'];
 		header('Location: accueil.php');
 	}
+	
+	
+	if (!isset($donnees['name'])) 
+	{
+		$msg = "erreur-login";
+	}
 	else
 	{
-		if (!isset($donnees['name'])) 
-		{
-			$msg = "erreur-login";
-		}
-		else
-		{
-			$msg = "erreur-password";
-		}
-		
-		header('Location: erreur.php?msg=' . $msg);
+		$msg = "erreur-password";
 	}
-
-	/*if ($name != $donnees['name']) 
-	{
-		//Login inexistant
 		
-		header('Location: erreur.php?msg=' . $msg);
-		exit;
-	}*/
-	//Login existant
-
-	//Je vérifie que le mot de passe correspond
+	header('Location: erreur.php?msg=' . $msg);
 	
-	
-	/*
-	$requete = $bdd->prepare('SELECT name, password, email FROM users WHERE name = :name AND password = :password');
-	$requete -> execute(array(
-		'name' => $name,
-    	'password' => $password    	
-    	));
-
-	$resultat = $requete->fetch();
-
-	if ($resultat) 
-	{
-		session_start();
-		$_SESSION['name'] = $resultat['name'];
-		$_SESSION['email'] = $resultat['email'];
-		
-	}*/	
 } 
 
 $name = strip_tags(htmlspecialchars($_POST['name']));
@@ -78,12 +49,3 @@ $password_hache = htmlspecialchars($_POST['password']);
 
 loginUser($name, $password_hache);
 
-/*if (isset($_SESSION['name'])) 
-{
-	header('Location: accueil.php');	
-}
-else
-{
-	header('Location: erreur.php');
-
-}*/
