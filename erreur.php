@@ -74,7 +74,16 @@ if (!isset($_SESSION))
 		</nav>
     <div>
       <h3>
-        <?php include('erreur.inc.php'); ?>
+        <?php
+        if (isset($_GET['msg']) && $_GET['msg'] === 'erreur-login') 
+        {
+          include('erreur_login.inc.php');
+        }
+        elseif (isset($_GET['msg']) && $_GET['msg'] === 'erreur-password') 
+        {
+          include('erreur_password.inc.php');          
+        }  
+        ?>
       </h3>
     </div>
       
