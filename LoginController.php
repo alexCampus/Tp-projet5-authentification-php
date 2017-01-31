@@ -27,7 +27,10 @@ function loginUser($name, $password_hache)
 		session_start();
 		$_SESSION['name'] = $donnees['name'];
 		$_SESSION['email'] = $donnees['email'];
+		setcookie('cookie_form_alex_name', $_SESSION['name'], (time() + 3600));
+		setcookie('cookie_form_alex_email', $_SESSION['email'], (time() + 3600));
 		header('Location: accueil.php');
+		exit;
 	}
 	
 	

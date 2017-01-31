@@ -3,7 +3,7 @@ if (!isset($_SESSION))
 {
   session_start();
 }
-if (!isset($_SESSION['name'])) 
+if (!isset($_COOKIE['cookie_form_alex_name'])) 
 {
   header('Location: index.php');
 }
@@ -77,8 +77,8 @@ else
    				<a href="logout.php"><button type="button" class="btn btn-default navbar-btn">Se Déconnecter</button></a>
   			</div>
 		</nav>
-      	<h1>Bienvenue <?php echo $_SESSION['name']  ?></h1>
-      	<p>Votre Email est le <?php echo $_SESSION['email']  ?></p>
+      	<h1>Bienvenue <?php echo $_COOKIE['cookie_form_alex_name']  ?></h1>
+      	<p>Votre Email est le <?php echo $_COOKIE['cookie_form_alex_email']  ?></p>
     </div> 
 
     

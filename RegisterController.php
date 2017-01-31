@@ -49,6 +49,8 @@ function initialisationSession($name, $password_hache, $email)
 		session_start();
 		$_SESSION['name'] = $resultat['name'];
 		$_SESSION['email'] = $resultat['email'];
+		setcookie('cookie_form_alex_name', $_SESSION['name'], (time() + 3600));
+		setcookie('cookie_form_alex_email', $_SESSION['email'], (time() + 3600));
 		
 	}	
 }

@@ -3,7 +3,7 @@ if (!isset($_SESSION))
 {
   session_start();
 }
-if (isset($_SESSION['name'])) 
+if (isset($_COOKIE['cookie_form_alex_name'])) 
 {
 	header('Location: accueil.php');
 }
