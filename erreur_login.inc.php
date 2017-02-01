@@ -1,1 +1,1 @@
-Oups , il semblerait que votre login ne soit pas juste
+<p style="color:red;">Oups , il semblerait que votre login ne soit pas juste</p>

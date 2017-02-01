@@ -1,7 +1,7 @@
 <?php 
-session_start();
+//session_start();
 
-$_SESSION = array();
+//$_SESSION = array();
 session_destroy();
 setcookie('cookie_form_alex_name');
 setcookie('cookie_form_alex_email');

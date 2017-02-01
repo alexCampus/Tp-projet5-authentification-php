@@ -43,7 +43,7 @@ function loginUser($name, $password_hache)
 		$msg = "erreur-password";
 	}
 		
-	header('Location: erreur.php?msg=' . $msg);
+	header('Location: index.php?msg=' . $msg);
 	
 } 
 

@@ -81,9 +81,20 @@ else{
         	<h2 class="form-signin-heading">Connectez Vous</h2>
         	<label for="inputEmail" class="sr-only">Name</label>
         	<input type="text" id="inputName" name="name" class="form-control" placeholder="Name" required autofocus>
+            <?php
+               if (isset($_GET['msg']) && $_GET['msg'] === 'erreur-login') 
+                {
+                  include('erreur_login.inc.php');
+                }
+            ?>
         	<label for="inputPassword" class="sr-only">Mot de Passe</label>
         	<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-        
+            <?php 
+              if (isset($_GET['msg']) && $_GET['msg'] === 'erreur-password') 
+                {
+                  include('erreur_password.inc.php');          
+                }  
+            ?>
        	 	<button class="btn btn-lg btn-primary btn-block" type="submit">Se Connecter</button>
       	</form>
 	       <?php 
